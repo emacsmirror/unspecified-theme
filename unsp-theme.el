@@ -27,6 +27,20 @@
 ;; along with this program. If not, see
 ;; <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; `unsp-theme' is a package that provides an equally named theme
+;; which sets most (if not all) face attributes to `unspecified'. In
+;; particular, it thus unspecifies all default attributes of defined
+;; faces. It is useful for Emacs users who want to radically theme the
+;; user interface themselves. And it is useful for theme authors who
+;; want to make sure they do not rely on pre-given face attributes and
+;; thus for debugging.
+
+;; For a screenshot, check out the `screenshot' branch or access it
+;; online:
+;; https://codeberg.org/mekeor/emacs-unsp/raw/branch/screenshot/screenshot.png
+
 ;;; Code:
 
 (require 'most-faces)
