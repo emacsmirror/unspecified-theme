@@ -51,7 +51,7 @@
 ;; installation, i.e. ensuring it is in a directory that is member of
 ;; your `load-path', evaluate the following:
 ;;
-;;   (load-theme 'unsp)
+;;   (load-theme 'unsp 'no-confirm)
 
 ;; In addition, as mentioned before, you may want to customize the
 ;; `default' face in your `user' theme.  For example, if you want
