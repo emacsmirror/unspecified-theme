@@ -7,7 +7,7 @@
 ;; Homepage:                https://codeberg.org/mekeor/emacs-unsp
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
-;; Package-Requires:        ((emacs "28.1") (most-faces "0.0.3"))
+;; Package-Requires:        ((emacs "21") (most-faces "0.0.3"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;; Version:                 0.0.2
 
@@ -45,18 +45,6 @@
 ;;   before loading yours in order to erase the default face
 ;;   attributes.
 
-;;;; Details:
-
-;; Beside setting face attributes to `unspecified', `unsp-theme' also
-;; sets some face-related variables.  Take a look at the code for the
-;; details.
-
-;; `unsp-theme' does not theme the `default' face because that can
-;; lead to unexpected behavior in its author's experience.
-
-;; `unsp-theme' depends on the `most-faces' package:
-;; https://codeberg.org/mekeor/emacs-most-faces
-
 ;;;; Usage:
 
 ;; `unsp-theme' can be used just like any other theme.  After
@@ -77,6 +65,23 @@
 ;; A screenshot is available in the `screenshot' branch and thus
 ;; accessible on the web:
 ;; https://codeberg.org/mekeor/emacs-unsp/raw/branch/screenshot/screenshot.png
+
+;;;; Details:
+
+;; Beside setting face attributes to `unspecified', `unsp-theme' also
+;; sets some face-related variables.  Take a look at the code for the
+;; details.
+
+;; `unsp-theme' does not theme the `default' face because that can
+;; lead to unexpected behavior in its author's experience.
+
+;;;; Dependencies:
+
+;; `unsp-theme' depends on Emacs version 21 or later because since
+;; then "all attributes can be set to 'unspecified'."
+
+;; `unsp-theme' depends on the `most-faces' package:
+;; https://codeberg.org/mekeor/emacs-most-faces
 
 ;;; Code:
 
