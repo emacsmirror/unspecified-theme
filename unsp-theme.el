@@ -33,11 +33,10 @@
 ;; sets the attributes of all faces to `unspecified' -- except for the
 ;; `default' face.  In particular, it thus makes the default
 ;; attributes of (almost) all defined faces ineffective.  This is
-;; useful in following scenarios:
+;; useful at least in following scenarios:
 
-;; - As an Emacs users, when you can load this theme and customize
-;;   only the `default' face, all faces will adhere to its
-;;   specification.
+;; - As an Emacs user, when you can load this theme and customize only
+;;   the `default' face, all faces will adhere to its specification.
 
 ;; - As an Emacs theme developer, you use `unsp-theme' to debug your
 ;;   theme: You can load `unsp-theme' before loading your own theme in
