@@ -134,6 +134,7 @@
 
 ;;;###autoload
 (when load-file-name
+  (require 'custom)
   (add-to-list 'custom-theme-load-path
     (file-name-directory load-file-name)))
 
