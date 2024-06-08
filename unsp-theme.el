@@ -114,7 +114,7 @@
   "Face with all attributes unspecified.")
 
 (apply #'custom-theme-set-faces 'unsp
-  (seq-map
+  (mapcar
     (lambda (face) (list face unsp-theme-unspecified-spec))
     ;; `most-faces-as-faces' promises to keep `default' face as its
     ;; very first element.  We skip it because unspecifying the
@@ -122,7 +122,7 @@
     (cdr most-faces-as-faces)))
 
 (apply #'custom-theme-set-variables 'unsp
-  (seq-map
+  (mapcar
     (lambda (var) (list var ''unsp-theme-unspecified-spec))
     most-faces-as-variables))
 
