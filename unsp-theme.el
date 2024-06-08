@@ -127,8 +127,8 @@
     most-faces-as-variables))
 
 (custom-theme-set-variables 'unsp
-  `(highlight-parentheses-colors nil)
-  `(ibuffer-fontification-alist nil))
+  '(highlight-parentheses-colors nil)
+  '(ibuffer-fontification-alist nil))
 
 (provide-theme 'unsp)
 
