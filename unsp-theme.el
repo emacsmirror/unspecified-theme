@@ -7,7 +7,7 @@
 ;; Homepage:                https://codeberg.org/mekeor/emacs-unsp
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
-;; Package-Requires:        ((emacs "21") (most-faces "0.0.3"))
+;; Package-Requires:        ((emacs "25") (most-faces "0.0.3"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;; Version:                 0.0.2
 
