@@ -1,10 +1,10 @@
-;;; unsp-theme.el --- Theme unspecifying most face attributes  -*- lexical-binding: t; -*-
+;;; unspecified-theme.el --- Theme unspecified most face attributes  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
 ;; Created:                 2024
-;; Homepage:                https://codeberg.org/mekeor/emacs-unsp
+;; Homepage:                https://codeberg.org/mekeor/emacs-unspecified-theme
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; Package-Requires:        ((emacs "25") (most-faces "0.0.3"))
@@ -29,29 +29,29 @@
 
 ;;; Commentary:
 
-;; `unsp-theme' is a package providing an equally named theme which
-;; sets the attributes of all faces to `unspecified' -- except for the
-;; `default' face.  In particular, it thus makes the default
+;; `unspecified-theme' is a package providing an equally named theme
+;; which sets the attributes of all faces to `unspecified' -- except
+;; for the `default' face.  In particular, it thus makes the default
 ;; attributes of (almost) all defined faces ineffective.  This is
 ;; useful at least in following scenarios:
 
 ;; - As an Emacs user, when you can load this theme and customize only
 ;;   the `default' face, all faces will adhere to its specification.
 
-;; - As an Emacs theme developer, you use `unsp-theme' to debug your
-;;   theme: You can load `unsp-theme' before loading your own theme in
-;;   order to check if yours depends on default face attributes.  You
-;;   might even require users of your theme to load `unsp-theme'
-;;   before loading yours in order to erase the default face
-;;   attributes.
+;; - As an Emacs theme developer, you use `unspecified-theme' to debug
+;;   your theme: You can load `unspecified-theme' before loading your
+;;   own theme in order to check if yours depends on default face
+;;   attributes.  You might even require users of your theme to load
+;;   `unspecified-theme' before loading yours in order to erase the
+;;   default face attributes.
 
 ;;;; Usage:
 
-;; `unsp-theme' can be used just like any other theme.  After
+;; `unspecified-theme' can be used just like any other theme.  After
 ;; installation, i.e. ensuring it is in a directory that is member of
 ;; your `load-path', evaluate the following:
 ;;
-;;   (load-theme 'unsp 'no-confirm)
+;;   (load-theme 'unspecified 'no-confirm)
 
 ;; In addition, as mentioned before, you may want to customize the
 ;; `default' face in your `user' theme.  For example, if you want
@@ -64,32 +64,32 @@
 
 ;; A screenshot is available in the `screenshot' branch and thus
 ;; accessible on the web:
-;; https://codeberg.org/mekeor/emacs-unsp/raw/branch/screenshot/screenshot.png
+;; https://codeberg.org/mekeor/emacs-unspecified-theme/raw/branch/screenshot/screenshot.png
 
 ;;;; Details:
 
-;; Beside setting face attributes to `unspecified', `unsp-theme' also
-;; sets some face-related variables.  Take a look at the code for the
-;; details.
+;; Beside setting face attributes to `unspecified',
+;; `unspecified-theme' also sets some face-related variables.  Take a
+;; look at the code for the details.
 
-;; `unsp-theme' does not theme the `default' face because that can
-;; lead to unexpected behavior in its author's experience.
+;; `unspecified-theme' does not theme the `default' face because that
+;; can lead to unexpected behavior in its author's experience.
 
 ;;;; Dependencies:
 
-;; `unsp-theme' depends on Emacs version 21 or later because since
-;; then "all attributes can be set to 'unspecified'."
+;; `unspecified-theme' depends on Emacs version 21 or later because
+;; since then "all attributes can be set to 'unspecified'."
 
-;; `unsp-theme' depends on the `most-faces' package:
+;; `unspecified-theme' depends on the `most-faces' package:
 ;; https://codeberg.org/mekeor/emacs-most-faces
 
 ;;; Code:
 
 (require 'most-faces)
 
-(deftheme unsp)
+(deftheme unspecified)
 
-(defvar unsp-theme-unspecified-spec
+(defvar unspecified-theme-unspecified-spec
   '((t
       :background     unspecified
       :box            unspecified
@@ -109,28 +109,28 @@
       :width          unspecified))
   "Specification of a face with all attributes unspecified.")
 
-(defvar unsp-theme-unspecified-face
-  unsp-theme-unspecified-spec
+(defvar unspecified-theme-unspecified-face
+  unspecified-theme-unspecified-spec
   "Face with all attributes unspecified.")
 
-(apply #'custom-theme-set-faces 'unsp
+(apply #'custom-theme-set-faces 'unspecified
   (mapcar
-    (lambda (face) (list face unsp-theme-unspecified-spec))
+    (lambda (face) (list face unspecified-theme-unspecified-spec))
     ;; `most-faces-as-faces' promises to keep `default' face as its
-    ;; very first element.  We skip it because unspecifying the
+    ;; very first element.  We skip it because unspecified the
     ;; default face yields unexpected behavior.
     (cdr most-faces-as-faces)))
 
-(apply #'custom-theme-set-variables 'unsp
+(apply #'custom-theme-set-variables 'unspecified
   (mapcar
-    (lambda (var) (list var ''unsp-theme-unspecified-spec))
+    (lambda (var) (list var ''unspecified-theme-unspecified-spec))
     most-faces-as-variables))
 
-(custom-theme-set-variables 'unsp
+(custom-theme-set-variables 'unspecified
   '(highlight-parentheses-colors nil)
   '(ibuffer-fontification-alist nil))
 
-(provide-theme 'unsp)
+(provide-theme 'unspecified)
 
 ;;;###autoload
 (when load-file-name
@@ -138,6 +138,6 @@
   (add-to-list 'custom-theme-load-path
     (file-name-directory load-file-name)))
 
-(provide 'unsp-theme)
+(provide 'unspecified-theme)
 
-;;; unsp-theme.el ends here
+;;; unspecified-theme.el ends here
