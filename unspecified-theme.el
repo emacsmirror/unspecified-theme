@@ -4,7 +4,7 @@
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
 ;; Created:                 2024
-;; Homepage:                https://codeberg.org/mekeor/emacs-unspecified-theme
+;; Homepage:                https://codeberg.org/mekeor/unspecified-theme
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; Package-Requires:        ((emacs "25") (most-faces "0.0.3"))
@@ -64,7 +64,7 @@
 
 ;; A screenshot is available in the `screenshot' branch and thus
 ;; accessible on the web:
-;; https://codeberg.org/mekeor/emacs-unspecified-theme/raw/branch/screenshot/screenshot.png
+;; https://codeberg.org/mekeor/unspecified-theme/raw/branch/screenshot/screenshot.png
 
 ;;;; Details:
 
@@ -81,7 +81,7 @@
 ;; since then "all attributes can be set to 'unspecified'."
 
 ;; `unspecified-theme' depends on the `most-faces' package:
-;; https://codeberg.org/mekeor/emacs-most-faces
+;; https://codeberg.org/mekeor/most-faces
 
 ;;; Code:
 
