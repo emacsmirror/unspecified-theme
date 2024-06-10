@@ -77,11 +77,16 @@
 
 ;;;; Dependencies:
 
-;; `unspecified-theme' depends on Emacs version 21 or later because
-;; since then "all attributes can be set to 'unspecified'."
-
 ;; `unspecified-theme' depends on the `most-faces' package:
 ;; https://codeberg.org/mekeor/most-faces
+
+;;;; Roadmap:
+
+;; Split this theme into two or three: (1.) A theme that unspecifies
+;; all faces-as-faces; (2.) A theme that unspecifies all
+;; faces-as-variables; (3.) A theme that unspecifies more complex
+;; variables referring to faces, like `highlight-parentheses-colors'
+;; and `ibuffer-fontification-alist'.
 
 ;;; Code:
 
