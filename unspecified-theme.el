@@ -1,4 +1,4 @@
-;;; unspecified-theme.el --- Theme unspecified most face attributes  -*- lexical-binding: t; -*-
+;;; unspecified-theme.el --- Theme that unspecifies all attributes of all faces  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -35,15 +35,17 @@
 ;; attributes of (almost) all defined faces ineffective.  This is
 ;; useful at least in following scenarios:
 
-;; - As an Emacs user, when you can load this theme and customize only
-;;   the `default' face, all faces will adhere to its specification.
+;; - As an Emacs user, when you load this theme and customize only the
+;;   `default' face, all faces will adhere to its specification.  Used
+;;   as such, `unspecified-theme' provides a radically minimalist
+;;   theme.
 
 ;; - As an Emacs theme developer, you use `unspecified-theme' to debug
-;;   your theme: You can load `unspecified-theme' before loading your
-;;   own theme in order to check if yours depends on default face
-;;   attributes.  You might even require users of your theme to load
-;;   `unspecified-theme' before loading yours in order to erase the
-;;   default face attributes.
+;;   the composability of your theme: You can load `unspecified-theme'
+;;   before loading your own theme in order to check if yours depends
+;;   on default face attributes.  You might even require users of your
+;;   theme to load `unspecified-theme' before loading yours in order
+;;   to erase the default face attributes.
 
 ;;;; Usage:
 
@@ -92,26 +94,28 @@
 
 (require 'most-faces)
 
-(deftheme unspecified)
+(deftheme unspecified
+  "Theme that unspecifies all attributes of all faces.
+
+Only the `default' face is not themed at all.")
 
 (defvar unspecified-theme-unspecified-spec
-  '((t
-      :background     unspecified
-      :box            unspecified
-      :extend         unspecified
-      :family         unspecified
-      :foreground     unspecified
-      :foundry        unspecified
-      :height         unspecified
-      :inherit        unspecified
-      :inverse-video  unspecified
-      :overline       unspecified
-      :slant          unspecified
-      :stipple        unspecified
-      :strike-through unspecified
-      :underline      unspecified
-      :weight         unspecified
-      :width          unspecified))
+  '((t :background     unspecified
+       :box            unspecified
+       :extend         unspecified
+       :family         unspecified
+       :foreground     unspecified
+       :foundry        unspecified
+       :height         unspecified
+       :inherit        unspecified
+       :inverse-video  unspecified
+       :overline       unspecified
+       :slant          unspecified
+       :stipple        unspecified
+       :strike-through unspecified
+       :underline      unspecified
+       :weight         unspecified
+       :width          unspecified))
   "Specification of a face with all attributes unspecified.")
 
 (defvar unspecified-theme-unspecified-face
@@ -119,21 +123,22 @@
   "Face with all attributes unspecified.")
 
 (apply #'custom-theme-set-faces 'unspecified
-  (mapcar
-    (lambda (face) (list face unspecified-theme-unspecified-spec))
-    ;; `most-faces-as-faces' promises to keep `default' face as its
-    ;; very first element.  We skip it because unspecified the
-    ;; default face yields unexpected behavior.
-    (cdr most-faces-as-faces)))
+       (mapcar
+        (lambda (face) (list face unspecified-theme-unspecified-spec))
+        ;; `most-faces-as-faces' promises to keep `default' face as
+        ;; its very first element.  We skip it because unspecified the
+        ;; default face yields unexpected behavior.
+        (cdr most-faces-as-faces)))
 
 (apply #'custom-theme-set-variables 'unspecified
-  (mapcar
-    (lambda (var) (list var ''unspecified-theme-unspecified-spec))
-    most-faces-as-variables))
+       (mapcar
+        (lambda (var) (list var ''unspecified-theme-unspecified-spec))
+        most-faces-as-variables))
 
-(custom-theme-set-variables 'unspecified
-  '(highlight-parentheses-colors nil)
-  '(ibuffer-fontification-alist nil))
+(custom-theme-set-variables
+ 'unspecified
+ '(highlight-parentheses-colors nil)
+ '(ibuffer-fontification-alist nil))
 
 (provide-theme 'unspecified)
 
@@ -141,7 +146,7 @@
 (when load-file-name
   (require 'custom)
   (add-to-list 'custom-theme-load-path
-    (file-name-directory load-file-name)))
+               (file-name-directory load-file-name)))
 
 (provide 'unspecified-theme)
 
