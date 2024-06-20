@@ -140,14 +140,12 @@ Only the `default' face is not themed at all.")
  '(highlight-parentheses-colors nil)
  '(ibuffer-fontification-alist nil))
 
-(provide-theme 'unspecified)
-
 ;;;###autoload
 (when load-file-name
   (require 'custom)
   (add-to-list 'custom-theme-load-path
                (file-name-directory load-file-name)))
 
-(provide 'unspecified-theme)
+(provide-theme 'unspecified)
 
 ;;; unspecified-theme.el ends here
